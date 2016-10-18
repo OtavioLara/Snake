@@ -17,11 +17,7 @@ public class Fruit extends Actor {
     
     public Fruit(int x, int y) {
         super(x, y, Color.red);
-        setImage(new BufferedImage(25, 25, BufferedImage.TYPE_4BYTE_ABGR_PRE));
-        Graphics2D g = (Graphics2D)getImage().getGraphics();
-        g.setColor(getColor());
-        g.fillRect(0, 0, 25, 25);
-        g.dispose();
+        creatImage();
     }
     public Fruit(int x, int y, Color color) {
         super(x, y, color);
@@ -30,6 +26,15 @@ public class Fruit extends Actor {
     @Override
     public void act() {
         
+    }
+
+    @Override
+    public void creatImage() {
+        setImage(new BufferedImage(SIZERECT, SIZERECT, BufferedImage.TYPE_4BYTE_ABGR_PRE));
+        Graphics2D g = (Graphics2D)getImage().getGraphics();
+        g.setColor(getColor());
+        g.fillRect(0, 0, SIZERECT, SIZERECT);
+        g.dispose();
     }
     
 }

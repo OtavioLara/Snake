@@ -31,7 +31,7 @@ public class Game {
             this.scene.update();
             this.scene.render();
             try {
-                Thread.sleep(30);
+                Thread.sleep(100);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
             }

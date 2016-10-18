@@ -16,8 +16,8 @@ import java.util.List;
  */
 public class SnakePlayer extends Snake {
 
-    public SnakePlayer(int x, int y) {
-        super(x, y);
+    public SnakePlayer(int x, int y,int size) {
+        super(x, y,size);
         
     }
     
@@ -29,8 +29,8 @@ public class SnakePlayer extends Snake {
     public void act() {
         super.act();
         updateDir();
-        
     }
+    
     public void updateDir(){
         if(InputHandler.getInstance().isPressed(KeyEvent.VK_UP) || InputHandler.getInstance().isPressed(KeyEvent.VK_W)){
             setDirection(UP);

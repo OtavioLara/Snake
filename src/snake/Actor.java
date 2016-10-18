@@ -7,7 +7,6 @@ package snake;
 
 import java.awt.Color;
 import java.awt.Image;
-import java.awt.Point;
 
 /**
  *
@@ -19,7 +18,7 @@ public abstract class Actor implements Renderable {
     private int x;
     private int y;
     private Color color;
-
+    public final static int SIZERECT = 25;
     public Actor(int x, int y) {
         this.x = x;
         this.y = y;

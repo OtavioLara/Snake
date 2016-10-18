@@ -17,11 +17,8 @@ public class Scene extends GameScene{
     public Scene() {
         actors = new ArrayList<>();
         Fruit f = new Fruit(50, 50);
-        SnakePlayer s = new SnakePlayer(100, 100);
+        SnakePlayer s = new SnakePlayer(100, 100, 6);
         addActor(f);
         addActor(s);
-    }
-
-
-    
+    }    
 }

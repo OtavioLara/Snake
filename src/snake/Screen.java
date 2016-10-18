@@ -8,6 +8,7 @@ package snake;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
+import java.awt.Point;
 import java.awt.image.BufferStrategy;
 import java.util.List;
 import javax.swing.JFrame;
@@ -32,7 +33,7 @@ public class Screen extends JFrame {
             return;
         }
         bs.show();
-        */
+         */
     }
 
     public void render(List<Renderable> renderables) {
@@ -40,7 +41,13 @@ public class Screen extends JFrame {
         g.setColor(Color.white);
         g.fillRect(0, 0, WIDTH, HEIGHT);
         for (Renderable renderable : renderables) {
-            g.drawImage(renderable.getImage(), renderable.getX(), renderable.getY(), null);
+            if (renderable instanceof Snake) {
+                for (Point piece : ((Snake) renderable).getBody()) {
+                    g.drawImage(renderable.getImage(), (int)piece.getX(), (int)piece.getY(), null);
+                }
+            } else {
+                g.drawImage(renderable.getImage(), renderable.getX(), renderable.getY(), null);
+            }
         }
         g.dispose();
     }
